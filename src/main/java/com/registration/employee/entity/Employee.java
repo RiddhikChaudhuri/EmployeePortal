@@ -45,6 +45,16 @@ public class Employee implements Serializable {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfBirth;
 
+	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String gender, LocalDate dateOfBirth,
+			@NotNull String department) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.department = department;
+	}
+
 	@Column(name="DEPARTMENT")
 	@NotNull
 	private String department;
@@ -103,6 +113,19 @@ public class Employee implements Serializable {
 	public int hashCode() {
 		return new HashCodeBuilder(11, 19).append(this.Id).hashCode();
 		
+	}
+	
+	
+
+	public Employee(Integer id, @NotNull String firstName, @NotNull String lastName, @NotNull String gender,
+			LocalDate dateOfBirth, @NotNull String department) {
+		super();
+		Id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.department = department;
 	}
 
 	@Override
