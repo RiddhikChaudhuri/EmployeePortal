@@ -1,0 +1,67 @@
+h1 {
+    font-size: 2.0em;
+    margin: 20px 0 0 0;
+    font-weight: 400;   
+}
+h3 { 
+	color: blue;
+}
+#employeeTable td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#employeeTable tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#employeeTable tr:hover {
+	background-color: #ddd;
+}
+
+.error-message {
+    color: red;
+}
+.success-message {
+    color: green;
+}
+.info-text {
+    padding-top: 7px;
+    padding-left: 10px;
+    color: #505D87;
+}
+.info-text-alignment {
+    display: -webkit-box;
+}
+
+#employeeTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+}
+input {
+    width: 225px;
+    margin: 8px 0;
+	background-color: #dfdfdf;
+	font-size:17px;
+}
+button {
+    background-color: #008CBA;
+	color: white;
+}
+.error{
+    color: red;
+    font-size: 20px;
+}
+.success{
+    color: green;
+    font-size: 20px;
+}

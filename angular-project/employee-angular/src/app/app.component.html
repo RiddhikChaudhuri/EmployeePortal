@@ -1,0 +1,82 @@
+ <head>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <h1 align="center">
+    Welcome to Employee Registration Page!
+  </h1>
+  </head>
+  <body>
+    <h3 align="center">Welcome to the Employee Registration Portal</h3>
+    <div>
+      <div class="container">
+          <h4> Please Enter Details of New Employee</h4>
+      <div class="col-25">
+          <form [formGroup]="employeeForm" #f="ngForm" method="post" enctype="application/json"> 
+          <div class="row">
+            <div class="col-25">
+              <div><label for="firstName">Enter First name : </label></div>
+              <div class="info-text-alignment">
+                <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+                <span title="Please enter First Name." class="glyphicon glyphicon-info-sign info-text"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-25">
+                <div><label for="lastName">Enter Last name : </label></div>
+                <div class="info-text-alignment">
+                  <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+                  <span title="Please enter Last Name." class="glyphicon glyphicon-info-sign info-text"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                  <div><label for="gender">Enter Gender : </label></div>
+                  <div class="info-text-alignment">
+                    <select class="glyphicon glyphicon-info-sign info-text" formControlName="gender" id="gender">
+                        <option class="form-control" required *ngFor="let gender of genderList" value= {{gender}}>
+                          {{gender}}
+                        </option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-25">
+                    <div><label for="department">Enter Department : </label></div>
+                    <div class="info-text-alignment">
+                      <input type="text" class="form-control" id="department" formControlName="department" required>
+                      <span title="Please enter Department." class="glyphicon glyphicon-info-sign info-text"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                      <div><label for="dateOfBirth">Enter Date of Birth : </label></div>
+                      <div class="info-text-alignment">
+                        <input type="date" id="dateOfBirth" class="form-control" formControlName="dateOfBirth" required>
+                        <span title="Please enter Date of Birth." class="glyphicon glyphicon-info-sign info-text"></span>
+                      </div>
+                    </div>
+                  </div>
+          <div class="row">
+              <div class="col-25">
+                <button title="Submit Button" class="btn btn-primary" type="button" (click)="onEmployeeUpdateFormSubmit(f)">Register</button>
+            </div>
+            </div>
+            </form>
+            </div>
+            </div>
+            </div>
+      <div class="table table-striped w-auto">
+       <table align="center" id="employeeTable" class="container" >
+          <tr><th> Id</th> <th>FirstName</th><th>LastName</th><th>Gender</th><th>Department</th><th>Date of Birth</th></tr>
+          <tr *ngFor="let employee of allEmployees">
+            <td id={{employee.id}}>{{employee.id}}</td><td>{{employee.firstName}}</td><td>{{employee.lastName}}</td><td>{{employee.gender}}</td><td>{{employee.department}}</td><td>{{employee.dateOfBirth}}</td>
+          </tr>
+        </table>
+       </div>
+  </body>
